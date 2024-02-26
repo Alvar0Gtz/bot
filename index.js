@@ -38,17 +38,6 @@ app.listen(port, () => {
 
 const statusMessages = ["East Custom 🚘","El mejor mecanico ✨"];
 
-client.on("ready", () =>{
-    console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setPresence({
-        status: "online",  // You can show online, idle... Do not disturb is dnd
-        game: {
-            name: "!help",  // The message shown
-            type: "PLAYING" // PLAYING, WATCHING, LISTENING, STREAMING,
-        }
-    });
- });
-
 let currentIndex = 0;
 const channelId = '';
 
@@ -83,7 +72,7 @@ function updateStatusAndSendMessages() {
   const nextStatus = statusMessages[(currentIndex + 1) % statusMessages.length];
 
   client.user.setPresence({
-    activities: [{ name: currentStatus, type: ActivityType.Custom}],
+    activities: [{ name: currentStatus, type: WATCHING}],
     status: 'dnd',
    game: {
             name: "!help",  // The message shown
