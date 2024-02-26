@@ -76,7 +76,7 @@ function updateStatusAndSendMessages() {
   const nextStatus = statusMessages[(currentIndex + 1) % statusMessages.length];
  
   client.user.setPresence({
-    activities: [{ name: currentStatus, type: ActivityType.PLAYING, url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',}],
+    activities: [{ name: currentStatus, type: ActivityType.PLAYING, url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'}],
     status: 'dnd',
   });
 
