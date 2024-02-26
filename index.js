@@ -39,32 +39,6 @@ app.listen(port, () => {
 const statusMessages = ["East Custom 🚘","El mejor mecanico ✨"];
 
 
-let currentIndex = 0;
-const channelId = '';
-
-async function login() {
-  try {
-    await client.login(process.env.TOKEN);
-    console.log(`\x1b[36m%s\x1b[0m`, `|    🐇 Logged in as ${client.user.tag}`);
-  } catch (error) {
-    console.error('Failed to log in:', error);
-    process.exit(1);
-  }
-}
- /** rich **/
-
-require('dotenv').config();
-const { Client, IntentsBitField, ActivityType } = require('discord.js');
-
-const client = new Client({
-  intents: [
-    IntentsBitField.Flags.Guilds,
-    IntentsBitField.Flags.GuildMembers,
-    IntentsBitField.Flags.GuildMessages,
-    IntentsBitField.Flags.MessageContent,
-  ],
-});
-
 let status = [
   {
     name: 'Under Ctrl',
@@ -84,17 +58,19 @@ let status = [
   },
 ];
 
-client.on('ready', (c) => {
-  console.log(`✅ ${c.user.tag} is online.`);
+let currentIndex = 0;
+const channelId = '';
 
-  setInterval(() => {
-    let random = Math.floor(Math.random() * status.length);
-    client.user.setActivity(status[random]);
-  }, 10000);
-});
-
-client.login(process.env.TOKEN);
-
+async function login() {
+  try {
+    await client.login(process.env.TOKEN);
+    console.log(`\x1b[36m%s\x1b[0m`, `|    🐇 Logged in as ${client.user.tag}`);
+  } catch (error) {
+    console.error('Failed to log in:', error);
+    process.exit(1);
+  }
+}
+ /** rich **/
 /**
  ██████╗░████████╗██╗░░██╗           
  ██╔══██╗╚══██╔══╝╚██╗██╔╝          
