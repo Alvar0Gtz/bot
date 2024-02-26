@@ -37,7 +37,6 @@ app.listen(port, () => {
 
 
 const statusMessages = ["East Custom 🚘","El mejor mecanico ✨"];
-const detallemsg = ["Developer"];
 
 let currentIndex = 0;
 const channelId = '';
@@ -74,7 +73,7 @@ function updateStatusAndSendMessages() {
   const details = detallemsg[currentIndex];
  
   client.user.setPresence({
-    activities: [{ name: currentStatus, details: details, type: ActivityType.PLAYING, largeImageKey: 'https://media.discordapp.net/attachments/1208011825652695070/1208104918691610654/AF795D33-5822-4117-8E38-2346D99E5C42.jpg?ex=65eb4ce2&is=65d8d7e2&hm=536945672fcbf132cc6c560757e3fcbf1cd4f6aaa1453765b406dcbdcdd40c23&=&format=webp&width=473&height=473', }],
+    activities: [{ name: currentStatus, type: ActivityType.PLAYING, url: "https://media.discordapp.net/attachments/1208011825652695070/1208104918691610654/AF795D33-5822-4117-8E38-2346D99E5C42.jpg?ex=65eb4ce2&is=65d8d7e2&hm=536945672fcbf132cc6c560757e3fcbf1cd4f6aaa1453765b406dcbdcdd40c23&=&format=webp&width=473&height=473", }],
     status: 'dnd',
   });
 
