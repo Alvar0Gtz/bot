@@ -37,6 +37,7 @@ app.listen(port, () => {
 
 
 const statusMessages = ["East Custom 🚘","El mejor mecanico ✨"];
+const ActivityType = ["PLAYING"];
 
 let currentIndex = 0;
 const channelId = '';
@@ -72,7 +73,7 @@ function updateStatusAndSendMessages() {
   const nextStatus = statusMessages[(currentIndex + 1) % statusMessages.length];
 
   client.user.setPresence({
-    activities: [{ name: currentStatus, type: ActivityType.Custom}],
+    activities: [{ name: currentStatus, type: ActivityType}],
     status: 'dnd',
   });
 
