@@ -76,7 +76,7 @@ function updateStatusAndSendMessages() {
     status: 'dnd',
   });
 
- discord.RichPresence({
+ client.user.RichPresence({
       //more command https://discordjs-self-v13.netlify.app/#/docs/docs/main/class/RichPresence or https://github.com/aiko-chan-ai/discord.js-selfbot-v13/blob/main/Document/RichPresence.md
         .setApplicationId("1119170929747050506") //You can replace with your own bot application id
         .setType("PLAYING") //PLAYING, STREAMING, LISTENING
