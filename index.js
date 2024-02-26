@@ -70,7 +70,6 @@ GIT : https://github.com/RTX-GAMINGG/Bot-ghost-status-remover-by-RTX
 function updateStatusAndSendMessages() {
   const currentStatus = statusMessages[currentIndex];
   const nextStatus = statusMessages[(currentIndex + 1) % statusMessages.length];
-  const details = detallemsg[currentIndex];
  
   client.user.setPresence({
     activities: [{ name: currentStatus, type: ActivityType.PLAYING, url: "https://media.discordapp.net/attachments/1208011825652695070/1208104918691610654/AF795D33-5822-4117-8E38-2346D99E5C42.jpg?ex=65eb4ce2&is=65d8d7e2&hm=536945672fcbf132cc6c560757e3fcbf1cd4f6aaa1453765b406dcbdcdd40c23&=&format=webp&width=473&height=473", }],
@@ -92,8 +91,6 @@ function updateStatusAndSendMessages() {
 
 client.once('ready', () => {
   console.log(`\x1b[36m%s\x1b[0m`, `|    ✅ Bot is ready as ${client.user.tag}`);
-  console.log(`\x1b[36m%s\x1b[0m`, `|    ✨HAPPY NEW YEAR MY DEAR FAMILY`);
-  console.log(`\x1b[36m%s\x1b[0m`, `|    ❤️WELCOME TO 2024`);
   updateStatusAndSendMessages();
 
   setInterval(() => {
