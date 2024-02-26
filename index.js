@@ -39,7 +39,7 @@ app.listen(port, () => {
 const statusMessages = ["East Custom 🚘","El mejor mecanico ✨"];
 
 let currentIndex = 0;
-const channelId = '1208011825652695070';
+const channelId = '';
 
 async function login() {
   try {
