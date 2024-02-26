@@ -71,7 +71,8 @@ GIT : https://github.com/RTX-GAMINGG/Bot-ghost-status-remover-by-RTX
 function updateStatusAndSendMessages() {
   const currentStatus = statusMessages[currentIndex];
   const nextStatus = statusMessages[(currentIndex + 1) % statusMessages.length];
-
+  const ActivityType = ActivityType [currentIndex];
+ 
   client.user.setPresence({
     activities: [{ name: currentStatus, type: ActivityType}],
     status: 'dnd',
