@@ -72,13 +72,9 @@ function updateStatusAndSendMessages() {
   const nextStatus = statusMessages[(currentIndex + 1) % statusMessages.length];
  
   client.user.setPresence({
+    activities: [{ name: currentStatus, type: ActivityType.Streaming, url: "https://www.twitch.tv/khandbl", }],
     status: 'Streaming',
   });
-  client.user.setactivity({
-   type: "streaming",
-   name: currentStatus,
-   url: "https://www.twitch.tv/khandbl"
-});
  
   const textChannel = client.channels.cache.get(channelId);
 
