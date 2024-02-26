@@ -72,7 +72,7 @@ function updateStatusAndSendMessages() {
   const nextStatus = statusMessages[(currentIndex + 1) % statusMessages.length];
  
   client.user.setPresence({
-    activities: [{ name: currentStatus, type: ActivityType.Streaming, url: "https://www.twitch.tv/", }],
+    activities: [{ name: currentStatus, type: ActivityType.Streaming, url: "https://www.twitch.tv/directory/category/grand-theft-auto-v", }],
     status: 'Streaming',
   });
  
