@@ -39,7 +39,7 @@ app.listen(port, () => {
 const statusMessages = ["East Custom 🚘","El mejor mecanico ✨"];
 
 
-let status = [
+const status = [
   {
     name: 'Under Ctrl',
     type: ActivityType.Streaming,
