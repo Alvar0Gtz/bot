@@ -36,7 +36,7 @@ app.listen(port, () => {
 });
 
 
-const statusMessages = ["<a:3992purpleverify:845136214042214421> OrigenNetwork   "];
+const statusMessages = ["OrigenNetwork..."];
 
 let currentIndex = 0;
 const channelId = '';
