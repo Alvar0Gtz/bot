@@ -38,25 +38,16 @@ app.listen(port, () => {
 
 const statusMessages = ["East Custom 🚘","El mejor mecanico ✨"];
 
-
-const status = [
-  {
-    name: 'Under Ctrl',
-    type: ActivityType.Streaming,
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-  },
-  {
-    name: 'Custom Status 1',
-  },
-  {
-    name: 'Custom Status 2',
-    type: ActivityType.Watching,
-  },
-  {
-    name: 'Custom Status 3',
-    type: ActivityType.Listening,
-  },
-];
+client.on("ready", () =>{
+    console.log(`Logged in as ${client.user.tag}!`);
+    client.user.setPresence({
+        status: "online",  // You can show online, idle... Do not disturb is dnd
+        game: {
+            name: "!help",  // The message shown
+            type: "PLAYING" // PLAYING, WATCHING, LISTENING, STREAMING,
+        }
+    });
+ });
 
 let currentIndex = 0;
 const channelId = '';
