@@ -15,7 +15,7 @@
 
 
 
-const { Client, GatewayIntentBits, ActivityType, TextChannel } = require('discord.js');
+const { Client, GatewayIntentBits, ActivityType, TextChannel, IntentsBitField } = require('discord.js');
 require('dotenv').config();
 const express = require('express');
 const fs = require('fs');
@@ -23,6 +23,10 @@ const path = require('path');
 const client = new Client({
   intents: Object.keys(GatewayIntentBits).map((a) => {
     return GatewayIntentBits[a];
+    IntentsBitField.Flags.Guilds,
+    IntentsBitField.Flags.GuildMembers,
+    IntentsBitField.Flags.GuildMessages,
+    IntentsBitField.Flags.MessageContent,
   }),
 });
 const app = express();
@@ -39,7 +43,7 @@ app.listen(port, () => {
 const statusMessages = ["East Custom 🚘","El mejor mecanico ✨"];
 
 let currentIndex = 0;
-const channelId = '';
+const channelId = '1208011825652695070';
 
 async function login() {
   try {
@@ -72,7 +76,7 @@ function updateStatusAndSendMessages() {
   const nextStatus = statusMessages[(currentIndex + 1) % statusMessages.length];
  
   client.user.setPresence({
-    activities: [{ name: currentStatus, type: ActivityType.PLAYING}],
+    activities: [{ name: currentStatus, type: ActivityType.PLAYING, url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',}],
     status: 'dnd',
   });
 
