@@ -36,7 +36,7 @@ app.listen(port, () => {
 });
 
 
-const statusMessages = ["East Custom","El mejor mecanico"];
+const statusMessages = ["East Custom 🚘","El mejor mecanico ✨"];
 
 
 let currentIndex = 0;
