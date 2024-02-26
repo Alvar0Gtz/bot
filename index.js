@@ -36,7 +36,7 @@ app.listen(port, () => {
 });
 
 
-const statusMessages = ["OrigenNetwork","Evolucion - Los Santos"];
+const statusMessages = ["OrigenNetwork","Evolucion - Los Santos","over ${client.guilds.cache.size} servers."];
 
 let currentIndex = 0;
 const channelId = '';
