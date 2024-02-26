@@ -83,12 +83,13 @@ function updateStatusAndSendMessages() {
   const nextStatus = statusMessages[(currentIndex + 1) % statusMessages.length];
 
   client.user.setPresence({
-        status: "online",  // You can show online, idle... Do not disturb is dnd
-        game: {
+    activities: [{ name: currentStatus, type: ActivityType.Custom}],
+    status: 'dnd',
+   game: {
             name: "!help",  // The message shown
             type: "PLAYING" // PLAYING, WATCHING, LISTENING, STREAMING,
         }
-    });
+  });
 
   
   const textChannel = client.channels.cache.get(channelId);
