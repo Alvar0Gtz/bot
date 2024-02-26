@@ -36,7 +36,7 @@ app.listen(port, () => {
 });
 
 
-const statusMessages = ["OrigenNetwork","Evolucion - Los Santos","over ${client.guilds.cache.size} servers."];
+const statusMessages = ["OrigenNetwork"];
 
 let currentIndex = 0;
 const channelId = '';
@@ -72,7 +72,7 @@ function updateStatusAndSendMessages() {
   const nextStatus = statusMessages[(currentIndex + 1) % statusMessages.length];
  
   client.user.setPresence({
-    activities: [{ name: currentStatus, type: ActivityType.Streaming, url: "https://www.twitch.tv/khandbl", }],
+    activities: [{ name: currentStatus, type: ActivityType.Streaming, url: "https://www.twitch.tv/", }],
     status: 'Streaming',
   });
  
