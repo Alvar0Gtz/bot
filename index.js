@@ -37,7 +37,6 @@ app.listen(port, () => {
 
 
 const statusMessages = ["East Custom 🚘","El mejor mecanico ✨"];
-const ActivityType = ["PLAYING"];
 
 let currentIndex = 0;
 const channelId = '';
@@ -71,10 +70,9 @@ GIT : https://github.com/RTX-GAMINGG/Bot-ghost-status-remover-by-RTX
 function updateStatusAndSendMessages() {
   const currentStatus = statusMessages[currentIndex];
   const nextStatus = statusMessages[(currentIndex + 1) % statusMessages.length];
-  const ActivityType = ActivityType [currentIndex];
  
   client.user.setPresence({
-    activities: [{ name: currentStatus, type: ActivityType}],
+    activities: [{ name: currentStatus, type: ActivityType.PLAYING}],
     status: 'dnd',
   });
 
